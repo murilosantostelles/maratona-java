@@ -1,4 +1,4 @@
-package com.murilosantostelles.maratonajava.javacore.introducaoclasses.dominio;
+package com.murilosantostelles.maratonajava.javacore.Aintroducaoclasses.dominio;
 
 public class Estudante {
     public String nome;
