@@ -4,7 +4,7 @@ import com.murilosantostelles.maratonajava.javacore.Bintroducaometodos.dominio.C
 
 public class CalculadoraTest01 {
     public static void main(String[] args) {
-        Calculadora calculadora = new Calculadora();
+        Calculadora calculadora = new Calculadora(); //instancia
 
         calculadora.somaDoisNumeros();
         calculadora.subtracaoDoisNumeros();

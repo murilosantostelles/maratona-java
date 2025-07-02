@@ -5,8 +5,8 @@ import com.murilosantostelles.maratonajava.javacore.Bintroducaometodos.dominio.I
 
 public class EstudanteTest01 {
     public static void main(String[] args) {
-        Estudante estudante01 = new Estudante();
-        Estudante estudante02 = new Estudante();
+        Estudante estudante01 = new Estudante(); //instanciou
+        Estudante estudante02 = new Estudante(); //instanciou
         ImpressoraEstudante impressora = new ImpressoraEstudante();
 
         estudante01.nome = "Midoriya";
