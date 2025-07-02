@@ -18,12 +18,7 @@ public class EstudanteTest01 {
         estudante02.idade = 16;
         estudante02.sexo = 'F';
 
-        System.out.println(estudante01.nome);
-        System.out.println(estudante01.idade);
-        System.out.println(estudante01.sexo);
-        System.out.println("----------------");
-        System.out.println(estudante02.nome);
-        System.out.println(estudante02.idade);
-        System.out.println(estudante02.sexo);
+        impressora.imprimir(estudante01);
+        impressora.imprimir(estudante02);
     }
 }
