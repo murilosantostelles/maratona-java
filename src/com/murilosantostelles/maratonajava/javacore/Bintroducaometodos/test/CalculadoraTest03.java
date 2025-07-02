@@ -7,5 +7,7 @@ public class CalculadoraTest03 {
         Calculadora calculadora = new Calculadora();
         double result = calculadora.divideDoisNumeros(8,4);
         System.out.println(result);
+        System.out.println("-------------------");
+        calculadora.imprimeDivisaoDeDoisNumeros(14,0);
     }
 }
