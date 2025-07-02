@@ -65,4 +65,20 @@ public class Calculadora {
         }
         return nums;
     }
+
+    public void somaArray(int[] numeros){
+        int soma = 0;
+        for(int num : numeros){
+            soma += num;
+        }
+        System.out.println("A soma é igual a: "+soma);
+    }
+    //VarArgs -> só muda na chamada em relação ao de cima.
+    public void somaVarArgs(int... numeros){
+        int soma = 0;
+        for(int num : numeros){
+            soma += num;
+        }
+        System.out.println("A soma é igual a: "+soma);
+    }
 }
