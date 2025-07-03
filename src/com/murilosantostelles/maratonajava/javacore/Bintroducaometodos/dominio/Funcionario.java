@@ -1,9 +1,9 @@
 package com.murilosantostelles.maratonajava.javacore.Bintroducaometodos.dominio;
 
 public class Funcionario {
-    public String nome;
-    public int idade;
-    public double [] salario;
+    private String nome;
+    private int idade;
+    private double [] salario;
 
     public void imprimir() {
         System.out.println("Nome : " + this.nome);
@@ -21,5 +21,29 @@ public class Funcionario {
             }
         double media = soma/salario.length;
         return media;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setIdade(int idade) {= "Murilo";
+        this.idade = idade;
+    }
+
+    public void setSalario(double[] salario) {
+        this.salario = salario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public double[] getSalario() {
+        return salario;
     }
 }
