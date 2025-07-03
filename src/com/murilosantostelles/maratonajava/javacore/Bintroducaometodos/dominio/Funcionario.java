@@ -27,7 +27,7 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public void setIdade(int idade) {= "Murilo";
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
