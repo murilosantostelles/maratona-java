@@ -1,4 +1,4 @@
-package com.murilosantostelles.maratonajava.javacore.Csobrecargametodos.dominio;
+package com.murilosantostelles.maratonajava.javacore.Dconstrutores.dominio;
 
 public class Anime {
     private String nome;
@@ -6,8 +6,17 @@ public class Anime {
     private int episodios;
     private String genero;
 
+    public Anime(String nome , String tipo , int episodios, String genero){ //construtor
+        System.out.println("Dentro do construtor");
+        this.nome = nome;
+        this.tipo = tipo;
+        this.episodios = episodios;
+        this.genero = genero;
+    }
 
+    public Anime(){
 
+    }
 
     public void imprime(){
         System.out.println(this.getNome());
@@ -16,16 +25,6 @@ public class Anime {
         System.out.println(this.getGenero());
     }
 
-    public void init(String nome, String tipo , int episodios){
-        this.nome = nome;
-        this.tipo = tipo;
-        this.episodios = episodios;
-    }
-
-    public void init(String nome, String tipo , int episodios, String genero){
-        this.init(nome,tipo,episodios);
-        this.genero = genero;
-    }
 
     public void setNome(String nome){
         this.nome = nome;

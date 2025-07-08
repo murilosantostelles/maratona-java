@@ -9,6 +9,5 @@ public class AnimeTest01 {
         //anime.init("Vinland Saga" , "TV" , 74);
         anime.init("Vinland Saga" , "TV" , 74, "Seinen");
         anime.imprime();
-        anime.imprime();
     }
 }
