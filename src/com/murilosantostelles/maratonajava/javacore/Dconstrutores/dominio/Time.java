@@ -4,6 +4,7 @@ public class Time {
     private String nome;
     private int trofeus;
     private String melhorJogador;
+    private int posicaoNaTabela;
 
     public Time(String nome, int trofeus){
         this.nome = nome;
@@ -13,6 +14,11 @@ public class Time {
     public Time(String nome, int trofeus, String melhorJogador){
         this(nome,trofeus);
         this.melhorJogador = melhorJogador;
+    }
+
+    public Time(String nome, int trofeus, String melhorJogador, int posicaoNaTabela){
+        this(nome,trofeus,melhorJogador);
+        this.posicaoNaTabela = posicaoNaTabela;
     }
 
 
@@ -38,5 +44,13 @@ public class Time {
 
     public void setMelhorJogador(String melhorJogador) {
         this.melhorJogador = melhorJogador;
+    }
+
+    public int getPosicaoNaTabela() {
+        return posicaoNaTabela;
+    }
+
+    public void setPosicaoNaTabela(int posicaoNaTabela) {
+        this.posicaoNaTabela = posicaoNaTabela;
     }
 }
