@@ -5,6 +5,25 @@ public class Pessoa {
     protected String cpf;
     protected Endereco endereco;
 
+    static {
+        System.out.println("Dentro do bloco estático de pessoa");
+    }
+    {
+        System.out.println("Bloco de inciialização não estatico ");
+    }
+    {
+        System.out.println("Bloco de inciialização não estatico ");
+    }
+    public Pessoa(String nome){
+        System.out.println("Dentro do construtor pessoa");
+        this.nome = nome;
+    }
+
+    public Pessoa(String nome, String cpf) {
+        this(nome);
+        this.cpf = cpf;
+    }
+
     public void imprime(){
         System.out.println(this.nome);
         System.out.println(this.cpf);
