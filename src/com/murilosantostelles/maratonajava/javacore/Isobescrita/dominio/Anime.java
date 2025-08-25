@@ -10,6 +10,10 @@ public class Anime {
                 '}';
     }
 
+    public void imprime(){
+        System.out.println(this.nome);
+    }
+
     public Anime(String nome) {
         this.nome = nome;
     }

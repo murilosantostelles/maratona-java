@@ -7,5 +7,6 @@ public class AnimeTest01 {
         Anime anime1 = new Anime("Dr. Stone");
 
         System.out.println(anime1);
+        anime1.imprime();
     }
 }
