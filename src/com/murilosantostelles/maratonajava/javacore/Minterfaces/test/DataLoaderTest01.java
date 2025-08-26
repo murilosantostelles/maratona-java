@@ -1,6 +1,7 @@
 package com.murilosantostelles.maratonajava.javacore.Minterfaces.test;
 
 
+import com.murilosantostelles.maratonajava.javacore.Minterfaces.dominio.DataLoader;
 import com.murilosantostelles.maratonajava.javacore.Minterfaces.dominio.DatabaseLoader;
 import com.murilosantostelles.maratonajava.javacore.Minterfaces.dominio.FileLoader;
 
@@ -11,9 +12,14 @@ public class DataLoaderTest01 {
 
         databaseLoader01.load();
         databaseLoader01.remove();
+
         fileLoader01.load();
         fileLoader01.remove();
-        databaseLoader01.checkPermissio(); 
+
+        databaseLoader01.checkPermissio();
         fileLoader01.checkPermissio();
+
+        DataLoader.retrieveMaxDataSize();
+        DatabaseLoader.retrieveMaxDataSize();
     }
 }
