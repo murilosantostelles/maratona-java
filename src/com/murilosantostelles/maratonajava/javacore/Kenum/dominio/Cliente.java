@@ -1,37 +1,26 @@
 package com.murilosantostelles.maratonajava.javacore.Kenum.dominio;
 
 public class Cliente {
+    public enum TipoPagamento{
+        DEBITO, CREDITO
+    }
     private String nome;
     private TipoCliente tipoCliente; // TEM UM
-    public static final String PESSOA_FISICA = "PESSOA_FISICA";
-    public static final String PESSOA_JURIDICA = "PESSOA_JURIDICA";
-
-    public Cliente(String nome, TipoCliente tipoCliente) {
-        this.nome = nome;
-        this.tipoCliente = tipoCliente;
-    }
+    private TipoPagamento tipoPagamento;
 
     @Override
     public String toString() {
         return "Cliente{" +
                 "nome='" + nome + '\'' +
                 ", tipoCliente=" + tipoCliente +
+                ", tipoClienteInt=" + tipoCliente.VALOR +
+                ", tipoPagamento=" + tipoPagamento +
                 '}';
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public Cliente(String nome, TipoCliente tipoCliente, TipoPagamento tipoPagamento) {
         this.nome = nome;
-    }
-
-    public TipoCliente getTipoCliente() {
-        return tipoCliente;
-    }
-
-    public void setTipoCliente(TipoCliente tipoCliente) {
         this.tipoCliente = tipoCliente;
+        this.tipoPagamento = tipoPagamento;
     }
 }
