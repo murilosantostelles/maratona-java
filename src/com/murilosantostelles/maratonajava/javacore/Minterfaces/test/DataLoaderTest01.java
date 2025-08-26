@@ -10,6 +10,10 @@ public class DataLoaderTest01 {
         FileLoader fileLoader01 = new FileLoader();
 
         databaseLoader01.load();
+        databaseLoader01.remove();
         fileLoader01.load();
+        fileLoader01.remove();
+        databaseLoader01.checkPermissio(); 
+        fileLoader01.checkPermissio();
     }
 }
