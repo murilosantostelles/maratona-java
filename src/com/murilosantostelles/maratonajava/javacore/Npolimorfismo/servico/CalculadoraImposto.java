@@ -12,6 +12,9 @@ public class CalculadoraImposto {
         System.out.println("Nome do produto: "+produto.getNome());
         System.out.println("Valor do produto: "+produto.getValor());
         System.out.println("Imposto a ser pago: "+imposto);
-
+        if(produto instanceof Tomate) {
+            Tomate tomate = (Tomate) produto;
+            System.out.println("Data de Validade: " + tomate.getDataValidade());
+        }
     }
 }
