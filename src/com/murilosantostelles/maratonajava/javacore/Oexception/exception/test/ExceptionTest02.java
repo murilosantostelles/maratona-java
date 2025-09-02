@@ -3,18 +3,19 @@ package com.murilosantostelles.maratonajava.javacore.Oexception.exception.test;
 import java.io.File;
 import java.io.IOException;
 
-public class ExceptionTest01 {
-    public static void main(String[] args) {
+public class ExceptionTest02 {
+    public static void main(String[] args) throws IOException {
         criarNovoArquivo();
     }
-    private static void criarNovoArquivo(){
+    public static void criarNovoArquivo() throws IOException{
         File file = new File("arquivo\\teste.txt");
         try{
-           boolean isCriado = file.createNewFile();
+            boolean isCriado = file.createNewFile();
             System.out.println("Arquivo criado "+isCriado);
         }catch(IOException e){
             e.printStackTrace(); //imprime tudo que aconteceu na stack
             //simplesmente pra lidar com exceções. Não colocar regra de negócio no catch, mas também não deixar ele vazio
+            throw e; // relançando a excessão que capturamos dentro do catch
         }
     }
 }
