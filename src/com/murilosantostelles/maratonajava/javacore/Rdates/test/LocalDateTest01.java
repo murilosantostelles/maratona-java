@@ -11,6 +11,8 @@ import java.util.Locale;
 
 public class LocalDateTest01 {
     public static void main(String[] args) {
+
+        // Usar LocalDate ao invés de Date sempre
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         LocalDate ldate = LocalDate.of(2026, Month.MAY,29);
