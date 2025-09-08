@@ -10,5 +10,9 @@ public class LocalTimeTest01 {
         System.out.println(time);
         System.out.println(timeNow);
 
+        System.out.println("-----------");
+
+        System.out.println(LocalTime.MIN);
+        System.out.println(LocalTime.MAX);
     }
 }
