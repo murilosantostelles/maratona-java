@@ -6,7 +6,7 @@ import java.time.LocalTime;
 
 public class DurationTest01 {
     public static void main(String[] args) {
-        // Duração
+        // Duração pra horas
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime nowAfterTwoYears = LocalDateTime.now().plusYears(2);
         LocalTime timenow = LocalTime.now();
