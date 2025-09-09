@@ -15,7 +15,9 @@ public class PatternMatcherTest02 {
         System.out.println("regex: "+regex);
         System.out.println("Posições encontradas");
         while(matcher.find()){
-            System.out.print(matcher.start()+" ");
+            System.out.print(matcher.start()+" "+matcher.group()+" \n");
         }
+        // ocorre um problema, pois ele nao verifica indice por indice
+        // no test03 tem a solução para esse problema
     }
 }
