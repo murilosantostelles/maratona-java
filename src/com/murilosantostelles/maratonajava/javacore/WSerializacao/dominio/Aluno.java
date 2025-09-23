@@ -1,11 +1,12 @@
 package com.murilosantostelles.maratonajava.javacore.WSerializacao.dominio;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Aluno implements Serializable {
-    private long id;
+    private Long id;
     private String nome;
-    private String password;
+    private transient String password; // significa que esse atributo não deverá ser serializado
 
     public Aluno(long id, String nome, String password) {
         this.id = id;
