@@ -2,8 +2,8 @@ package com.murilosantostelles.maratonajava.javacore.Xcolecoes.dominio;
 
 import java.util.Objects;
 
-public class Manga {
-    private long id;
+public class Manga implements Comparable<Manga>{
+    private Long id;
     private String nome;
     private double preco;
 
@@ -28,6 +28,8 @@ public class Manga {
         Manga manga = (Manga) o;
         return id == manga.id && Double.compare(preco, manga.preco) == 0 && Objects.equals(nome, manga.nome);
     }
+
+
 
     @Override
     public int hashCode() {
@@ -56,5 +58,13 @@ public class Manga {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public int compareTo(Manga outroManga) {
+        // negativo se o this < outroManga
+        // return 0, se o this == outroManga
+        // positivo, se o this > outroManga
+        return this.id.compareTo(outroManga.getId());
     }
 }
