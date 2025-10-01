@@ -85,4 +85,7 @@ public class Manga implements Comparable<Manga>{
         // positivo, se o this > outroManga
         return this.id.compareTo(outroManga.getId());
     }
+
+
+
 }
