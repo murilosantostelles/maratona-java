@@ -6,7 +6,7 @@ public class OuterClassesTest02 {
 
     void print(){
         class LocalCLass {
-            
+
         }
     }
 
