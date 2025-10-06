@@ -1,4 +1,21 @@
 package com.murilosantostelles.maratonajava.javacore.ZZBlambdas.test;
 
-public class LambdaTest01 0{
+import java.util.List;
+import java.util.function.Consumer;
+
+public class LambdaTest01 {
+    public static void main(String[] args) {
+        List<String> strings = List.of("Murilo", "Luffy", "Zoro");
+        List<Integer> inteiros = List.of(1, 2, 3, 5, 7, 10, 4);
+        forEach(strings, (String s) -> System.out.println(s));
+        forEach(inteiros, nums -> System.out.println(nums)); // pode-se remover os parenteses e o tipo
+    }
+    private static <T> void forEach(List<T> list, Consumer<T> consumer){
+        for (T t : list) {
+            consumer.accept(t);
+        }
+
+    }
 }
+
+
