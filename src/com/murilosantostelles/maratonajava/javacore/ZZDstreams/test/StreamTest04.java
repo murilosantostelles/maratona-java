@@ -24,6 +24,6 @@ public class StreamTest04 {
 
         devdojo.stream()
                 .flatMap(Collection::stream).forEach(System.out::println);
-        
+
     }
 }
