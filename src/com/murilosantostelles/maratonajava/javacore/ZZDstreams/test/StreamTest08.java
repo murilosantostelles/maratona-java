@@ -19,7 +19,7 @@ public class StreamTest08 {
 
         // somando todos acima de 3
         lightNovels.stream()
-                .map(LightNovel::getPrice)
+                .map(LightNovel::getPrice) // usa-se o map pra extrair todos os atributos
                 .filter(price -> price > 3)
                 .reduce(Double::sum)// pode usar wrapper
                 .ifPresent(System.out::println);
