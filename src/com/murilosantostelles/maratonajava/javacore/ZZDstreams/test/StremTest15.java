@@ -22,11 +22,8 @@ public class StremTest15 {
 
         System.out.println(collect);
         System.out.println("============");
-
-
     }
     private static Promotion getPromotion(LightNovel ln){
         return ln.getPrice() < 6 ? Promotion.UNDER_PROMOTION : Promotion.NORMAL_PRICE;
     }
-
 }
