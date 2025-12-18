@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class AirCraftSingletonEager {
-    private static final AirCraftSingletonEager INSTANCE = new AirCraftSingletonEager("787-900");
+    private static AirCraftSingletonEager INSTANCE = new AirCraftSingletonEager("787-900");
     private final Set<String> availableSeats = new HashSet<>();
     private final String name;
 
