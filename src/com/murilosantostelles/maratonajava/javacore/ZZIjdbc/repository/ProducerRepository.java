@@ -70,4 +70,26 @@ public class ProducerRepository {
         }
         return producers;
     }
+
+
+
+    public static List<Producer> findByName(String name){
+        System.out.println("Finding Producers by name: ");
+        String sql = "SELECT * FROM producer WHERE name like '%s';".formatted("%"+name+"%");
+        List<Producer> producers = new ArrayList<>();
+        try(Connection conn = ConnectionFactory.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()){
+                var id = rs.getInt("id");
+                var nameProducer = rs.getString("name");
+                Producer producerObject = Producer.builder().id(id).name(nameProducer).build();
+                producers.add(producerObject);
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer");
+            throw new RuntimeException(e);
+        }
+        return producers;
+    }
 }
