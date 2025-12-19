@@ -3,6 +3,9 @@ package com.murilosantostelles.maratonajava.javacore.ZZIjdbc.service;
 import com.murilosantostelles.maratonajava.javacore.ZZIjdbc.dominio.Producer;
 import com.murilosantostelles.maratonajava.javacore.ZZIjdbc.repository.ProducerRepository;
 
+import java.util.List;
+
+
 public class ProducerService {
     public static void save(Producer producer){
         ProducerRepository.save(producer);
@@ -19,6 +22,11 @@ public class ProducerService {
         requireValidId(producer.getId());
         ProducerRepository.update(producer);
     }
+
+    public static List<Producer> findAll() {
+        return ProducerRepository.findAll();
+    }
+
     private static void requireValidId(Integer id){
         if(id == null || id <= 0){
             throw new IllegalArgumentException("Invalid value for id");
