@@ -22,6 +22,7 @@ public class ConnectionFactoryTest01 {
         //List<Producer> producersFiltered = ProducerService.findByName("map");
         //System.out.println("Producers filtered by name found: "+ producersFiltered);
 
-        ProducerService.showProducerMetaData();
+        //ProducerService.showProducerMetaData();
+        ProducerService.showDriverMetaData();
     }
 }

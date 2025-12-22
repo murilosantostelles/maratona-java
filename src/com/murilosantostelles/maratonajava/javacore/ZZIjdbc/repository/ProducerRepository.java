@@ -111,4 +111,32 @@ public class ProducerRepository {
             throw new RuntimeException(e);
         }
     }
+
+    public static void showDriverMetaData(){
+        System.out.println("Showing Driver Metadata :");
+        try(Connection conn = ConnectionFactory.getConnection()){
+            DatabaseMetaData dbMetaData = conn.getMetaData();
+            if(dbMetaData.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)){
+                System.out.println("Supports TYPE_FORWARD_ONLY ");
+                if(dbMetaData.supportsResultSetConcurrency(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE)){
+                    System.out.println("And supports CONCUR_UPDATABLE");
+                }
+            }
+            if(dbMetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)){
+                System.out.println("Supports TYPE_SCROLL_INSENSITIVE ");
+                if(dbMetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+                    System.out.println("And supports CONCUR_UPDATABLE");
+                }
+            }
+            if(dbMetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)){
+                System.out.println("Supports TYPE_SCROLL_SENSITIVE");
+                if(dbMetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+                    System.out.println("And supports CONCUR_UPDATABLE");
+                }
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer");
+            throw new RuntimeException(e);
+        }
+    }
 }
