@@ -4,10 +4,7 @@ import com.murilosantostelles.maratonajava.javacore.ZZIjdbc.conn.ConnectionFacto
 import com.murilosantostelles.maratonajava.javacore.ZZIjdbc.dominio.Producer;
 import lombok.extern.log4j.Log4j2;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,5 +88,27 @@ public class ProducerRepository {
             throw new RuntimeException(e);
         }
         return producers;
+    }
+
+    public static void showProducerMetaData(){
+        System.out.println("Showing Producer Metadata :");
+        String sql = "SELECT * FROM anime_store.producer";
+        try(Connection conn = ConnectionFactory.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+            ResultSetMetaData rsMetaData = rs.getMetaData();
+            rs.next();
+            int columnCount = rsMetaData.getColumnCount();
+            System.out.println("Columns count: "+columnCount);
+            for (int i = 1; i <= columnCount; i++){
+                System.out.println("Table Name "+rsMetaData.getTableName(i));
+                System.out.println("Column Name "+rsMetaData.getColumnName(i));
+                System.out.println("Column Size "+rsMetaData.getColumnDisplaySize(i));
+                System.out.println("Column Type "+rsMetaData.getColumnTypeName(i));
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer");
+            throw new RuntimeException(e);
+        }
     }
 }

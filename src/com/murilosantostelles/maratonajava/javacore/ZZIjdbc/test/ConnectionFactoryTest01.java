@@ -19,7 +19,9 @@ public class ConnectionFactoryTest01 {
         //List<Producer> producers = ProducerService.findAll();
         //System.out.println("Producers found: "+ producers);
 
-        List<Producer> producersFiltered = ProducerService.findByName("map");
-        System.out.println("Producers filtered by name found: "+ producersFiltered);
+        //List<Producer> producersFiltered = ProducerService.findByName("map");
+        //System.out.println("Producers filtered by name found: "+ producersFiltered);
+
+        ProducerService.showProducerMetaData();
     }
 }
