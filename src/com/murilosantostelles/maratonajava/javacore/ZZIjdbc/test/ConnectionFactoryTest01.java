@@ -23,6 +23,8 @@ public class ConnectionFactoryTest01 {
         //System.out.println("Producers filtered by name found: "+ producersFiltered);
 
         //ProducerService.showProducerMetaData();
-        ProducerService.showDriverMetaData();
+        //ProducerService.showDriverMetaData();
+
+        ProducerService.showTypeScrollWorking();
     }
 }
