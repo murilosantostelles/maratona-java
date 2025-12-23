@@ -25,6 +25,9 @@ public class ConnectionFactoryTest01 {
         //ProducerService.showProducerMetaData();
         //ProducerService.showDriverMetaData();
 
-        ProducerService.showTypeScrollWorking();
+        //ProducerService.showTypeScrollWorking();
+
+        List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Map");
+        System.out.println("Producers found '"+producers+"'");
     }
 }
