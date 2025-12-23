@@ -27,7 +27,10 @@ public class ConnectionFactoryTest01 {
 
         //ProducerService.showTypeScrollWorking();
 
-        List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Map");
+        //List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Map");
+        //System.out.println("Producers found '"+producers+"'");
+
+        List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("A-1 Pictures");
         System.out.println("Producers found '"+producers+"'");
     }
 }

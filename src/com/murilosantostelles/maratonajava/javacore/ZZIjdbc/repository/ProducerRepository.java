@@ -175,4 +175,31 @@ public class ProducerRepository {
         }
         return producers;
     }
+
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name){
+        System.out.println("Finding Producers by name: ");
+        String sql = "SELECT * FROM producer WHERE name like '%s';".formatted("%"+name+"%");
+        List<Producer> producers = new ArrayList<>();
+        try(Connection conn = ConnectionFactory.getConnection();
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = stmt.executeQuery(sql)) {
+            if(!rs.next()){
+                rs.moveToInsertRow();//move pra uma linha temporária
+                rs.updateString("name", name);
+                rs.insertRow();
+                rs.beforeFirst();
+                rs.next();
+                Producer producer = Producer
+                        .builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .build();
+                producers.add(producer);
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer");
+            throw new RuntimeException(e);
+        }
+        return producers;
+    }
 }
